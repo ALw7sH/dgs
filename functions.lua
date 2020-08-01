@@ -273,7 +273,7 @@ function dgsGetVisible(dgsEle)
 		local p = FatherTable[dgsEle]
 		for i=1,5000 do
 			if not p then break end
-			if not dgsElementData[p].visible then return false end
+			if dgsElementData[p] and not dgsElementData[p].visible then return false end
 			p = FatherTable[p]
 		end
 		return true
